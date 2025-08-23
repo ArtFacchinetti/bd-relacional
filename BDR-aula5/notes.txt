@@ -1,0 +1,26 @@
+1 : VARCHAR tem limite caracteres, entquanto TEXT não
+
+2 : Faz sentido normalizar Estados em algumas situações:
+        Evitar inconsistências: 'SP', 'São Paulo', 'sao paulo', 'sp'...
+        No caso de adicionar mais informações aos estados: População, Região...
+        Em casos onde serão feitas querys de pesquisa baseado em estados
+
+3 : CHECK limita as possibilidades de valores de uma coluna.
+Nesse caso, limita 'nivel' para os valores 'baixo','medio','alto','critico'
+
+EXTRA:
+ENUM : Banco de daod s Postgres podem ter tipos ENUM
+        EX.: CREATE TYPE emocao AS ENUM ('triste', 'ok', 'feliz');
+
+        CREATE TABLE pessoa (
+            nome VARCHAR(50),
+            emocao_atual emocao
+        )
+
+        INSERT INTO pessoa VALUES ('Arthur', 'feliz')
+
+DECIMAL : 
+
+PERGUNTAS :
+Quais são os tipos de normalização e como usá-las nessa banco?
+O que a aba 'Schemas' faz nop pgAdmin?
